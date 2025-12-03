@@ -1,0 +1,42 @@
+version: "3.3"
+services:
+  sih-atellica-qlik-service:
+    build:
+      context: "."
+      dockerfile: "./sih-atellica-qlik-service/Dockerfile.dev"
+    environment:
+      - DB_HOST=db
+    ports:
+      - "3001:8080"
+    depends_on:
+      - db
+    volumes:
+      - ./sih-atellica-qlik-service:/usr/src/app
+      - sih-atellica-qlik-service-node_modules:/usr/src/app/node_modules
+  sih-atellica-qplus-backend:
+    build:
+      context: "./sih-atellica-qplus-backend/"
+      dockerfile: "Dockerfile.dev"
+    environment:
+      - DB_HOST=db
+    ports:
+      - "3002:8080"
+    depends_on:
+      - db
+    volumes:
+      - ./sih-atellica-qplus-backend:/usr/src/app
+      - sih-atellica-qplus-backend-node_modules:/usr/src/app/node_modules
+  db:
+    image: postgres:12.8
+    volumes:
+      - "./data:/var/lib/postgresql/data"
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: pgdb
+volumes:
+  sih-atellica-qlik-service-node_modules:
+  sih-atellica-qplus-backend-node_modules:

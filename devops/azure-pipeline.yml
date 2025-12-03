@@ -1,0 +1,156 @@
+trigger: none
+pr: none
+
+resources:
+    - repo: self
+variables:
+    - name: tag
+      value: '$(Build.BuildId)'
+parameters:
+  - name: sem_ver
+    displayName: Tag
+
+stages:
+    - stage: Build
+      displayName: Build
+      jobs:
+          - job: Build_AppApi
+            displayName: Build AppApi
+            pool:
+                vmImage: 'ubuntu-latest'
+            steps:
+                - checkout: self
+                  submodules: true  
+                - task: Docker@2
+                  displayName: Build docker sih-atellica-qplus-backend
+                  inputs:
+                      command: 'build'
+                      dockerfile: '$(Build.SourcesDirectory)/sih-atellica-qplus-backend/Dockerfile'
+                      repository: sih-atellica-qplus-backend-image
+                      tags: |
+                          $(tag)
+                          latest
+                - script: |
+                    set -e
+                    mkdir -p ./for-zip/$FILENAME
+                    docker create -ti --name tempcontainer $DOCKER_IMAGE_NAME
+                    docker cp tempcontainer:/usr/src/app/. $(System.DefaultWorkingDirectory)/for-zip/$FILENAME
+                        # Remove container
+                    docker rm -fv tempcontainer
+                  env:
+                    DOCKER_IMAGE_NAME: 'sih-atellica-qplus-backend-image:$(tag)'
+                    FILENAME: sih-atellica-qplus-backend
+                  name: ExtractFilesAppApi
+                  displayName: 'Extract Files App Api'
+                - task: ArchiveFiles@2
+                  inputs:
+                    rootFolderOrFile: $(System.DefaultWorkingDirectory)/for-zip/sih-atellica-qplus-backend
+                    includeRootFolder: true
+                    archiveType: 'zip'
+                    archiveFile: '$(System.DefaultWorkingDirectory)/sih-atellica-qplus-backend.zip'
+                    replaceExistingArchive: true
+
+                - publish: $(System.DefaultWorkingDirectory)/sih-atellica-qplus-backend.zip
+                  artifact: sih-atellica-qplus-backend
+          - job: Build_QSservice
+            dependsOn: Build_AppApi
+            displayName: Build QSservice 
+            pool:
+                vmImage: 'ubuntu-latest'
+            steps:
+                - checkout: self
+                  submodules: true
+                - task: Docker@2
+                  displayName: Build docker sih-atellica-qlik-service
+                  inputs:
+                      command: 'build'
+                      dockerfile: '$(Build.SourcesDirectory)/sih-atellica-qlik-service/Dockerfile'
+                      repository: sih-atellica-qlik-service-image
+                      tags: |
+                          $(tag)
+                          latest
+                - script: |
+                    set -e
+                    mkdir -p ./for-zip/$FILENAME
+                    docker create -ti --name tempcontainer $DOCKER_IMAGE_NAME
+                    docker cp tempcontainer:/usr/src/app/. $(System.DefaultWorkingDirectory)/for-zip/$FILENAME
+                        # Remove container
+                    docker rm -fv tempcontainer
+                  env:
+                      DOCKER_IMAGE_NAME: 'sih-atellica-qlik-service-image:$(tag)'
+                      FILENAME: sih-atellica-qlik-service
+                  name: ExtractFilesQsS
+                  displayName: 'Extract Files QsS'
+                - task: ArchiveFiles@2
+                  inputs:
+                    rootFolderOrFile: $(System.DefaultWorkingDirectory)/for-zip/sih-atellica-qlik-service
+                    includeRootFolder: true
+                    archiveType: 'zip'
+                    archiveFile: '$(System.DefaultWorkingDirectory)/sih-atellica-qlik-service.zip'
+                    replaceExistingArchive: true
+
+                - publish: $(System.DefaultWorkingDirectory)/sih-atellica-qlik-service.zip
+                  artifact: sih-atellica-qlik-service
+          - job: Build_Frontend
+            dependsOn: Build_QSservice
+            displayName: Build Frontend 
+            pool:
+                vmImage: 'ubuntu-latest'
+            steps:
+                - checkout: self
+                  submodules: true              
+                - task: Docker@2
+                  displayName: Build docker sih-atellica-qplus-frontend
+                  inputs:
+                    repository: 'sih-atellica-qplus-frontend-image'
+                    command: 'build'
+                    Dockerfile: '$(Build.SourcesDirectory)/sih-atellica-qplus-frontend/Dockerfile'
+                    tags: |
+                      $(tag)
+                      latest
+                    arguments: '--build-arg version=v${{ parameters.sem_ver }}'
+                - script: |
+                    set -e
+                    mkdir -p ./for-zip/$FILENAME
+                    docker create -ti --name tempcontainer $DOCKER_IMAGE_NAME 
+                    docker cp tempcontainer:/usr/src/app/. $(System.DefaultWorkingDirectory)/for-zip/$FILENAME
+                        # Remove container
+                    docker rm -fv tempcontainer
+                  env:
+                      DOCKER_IMAGE_NAME: 'sih-atellica-qplus-frontend-image:$(tag)'
+                      FILENAME: sih-atellica-qplus-frontend
+                  name: ExtractFilesFrontend
+                  displayName: 'Extract Files Frontend'
+                - task: ArchiveFiles@2
+                  inputs:
+                    rootFolderOrFile: $(System.DefaultWorkingDirectory)/for-zip/sih-atellica-qplus-frontend
+                    includeRootFolder: true
+                    archiveType: 'zip'
+                    archiveFile: '$(System.DefaultWorkingDirectory)/sih-atellica-qplus-frontend.zip'
+                    replaceExistingArchive: true
+
+                - publish: $(System.DefaultWorkingDirectory)/sih-atellica-qplus-frontend.zip
+                  artifact: sih-atellica-qplus-frontend
+    - stage: TagAndRelease
+      dependsOn: Build
+      displayName: Tag And Release
+      jobs:
+          - job: TagAndRelease
+            displayName: Tag And Release
+            pool:
+                vmImage: 'ubuntu-latest'
+            steps:
+                - checkout: none
+                - download: current
+                - task: GitHubRelease@1
+                  inputs:
+                    gitHubConnection: 'github.com_githubdatabridge'
+                    repositoryName: '$(Build.Repository.Name)'
+                    action: 'create'
+                    target: '$(Build.SourceVersion)'
+                    tagSource: 'userSpecifiedTag'
+                    tag: 'v${{ parameters.sem_ver }}'
+                    assets: /home/vsts/work/1/**/*.zip
+                    isDraft: true
+                    changeLogCompareToRelease: 'lastFullRelease'
+                    changeLogType: 'commitBased'

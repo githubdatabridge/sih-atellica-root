@@ -1,0 +1,5 @@
+data/
+.vscode/
+.npmrc
+.env
+.DS_Store
