@@ -1,0 +1,9 @@
+[submodule "sih-atellica-qplus-backend"]
+	path = sih-atellica-qplus-backend
+	url = https://github.com/githubdatabridge/sih-atellica-qplus-backend.git
+[submodule "sih-atellica-qplus-frontend"]
+	path = sih-atellica-qplus-frontend
+	url = https://github.com/githubdatabridge/sih-atellica-qplus-frontend.git
+[submodule "sih-atellica-qlik-service"]
+	path = sih-atellica-qlik-service
+	url = https://github.com/githubdatabridge/sih-atellica-qlik-service.git
