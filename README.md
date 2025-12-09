@@ -439,7 +439,7 @@ API_KEY=your-secure-api-key-here
 
 **Tenant Configuration**:
 ```bash
-# TENANT_FILE_NAME=tenants_develop.json
+# TENANT_FILE_NAME=configuration_develop.json
 # TENANT_FILE_PATH=src/
 ```
 

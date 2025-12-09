@@ -276,7 +276,7 @@ Frontend (7005) ──► App API (3002) ──► Database (5432)
 ### Configuration Management
 - Environment variables via `.env` files
 - Service-specific configuration
-- Tenant configuration files (`tenants_develop.json`, `tenants_staging.json`)
+- Tenant configuration files (`configuration_develop.json`, `configuration_staging.json`)
 - Frontend startup configuration (`startup.json`)
 
 ## Data Flow
@@ -373,7 +373,7 @@ Frontend (7005) ──► App API (3002) ──► Database (5432)
 - `.env` - Environment variables for all services
 - `docker-compose.yml` - Service orchestration
 - `startup.json` - Frontend application configuration
-- `tenants_*.json` - Tenant-specific configurations
+- `configuration_*.json` - Tenant-specific configurations
 - `package.json` - Node.js dependencies per service
 
 ## API Documentation

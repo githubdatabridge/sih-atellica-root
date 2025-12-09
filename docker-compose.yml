@@ -1,4 +1,3 @@
-version: "3.3"
 services:
   sih-atellica-qlik-service:
     build:
@@ -7,7 +6,7 @@ services:
     environment:
       - DB_HOST=db
     ports:
-      - "3001:8080"
+      - "3003:8080"
     depends_on:
       - db
     volumes:
@@ -36,7 +35,7 @@ services:
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
-      POSTGRES_DB: pgdb
+      POSTGRES_DB: sih_qplus
 volumes:
   sih-atellica-qlik-service-node_modules:
   sih-atellica-qplus-backend-node_modules:

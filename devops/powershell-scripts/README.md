@@ -82,7 +82,7 @@ NODE_TLS_REJECT_UNAUTHORIZED=0
 # LOG_MAX_FILES=14d
 
 # TENANT_FILE_PATH=src/
-# TENANT_FILE_NAME=tenants_develop.json
+# TENANT_FILE_NAME=configuration_develop.json
 
 # STATE_SECRET=very_secret_secret_very_secret_secret
 
@@ -97,7 +97,7 @@ NODE_TLS_REJECT_UNAUTHORIZED=0
 # SVC_PWD=
 ```
 
-After closing notepad for .env second notepad will be open but now for `tenants_develop.json` were have to provide host name for Qlik and callbackUrl for mashup App. After closing notepad deploying app api will continue. 
+After closing notepad for .env second notepad will be open but now for `configuration_develop.json` were have to provide host name for Qlik and callbackUrl for mashup App. After closing notepad deploying app api will continue. 
 
 ```
 [
@@ -130,7 +130,7 @@ After closing notepad for .env second notepad will be open but now for `tenants_
     }
 ]
 ```
-After closing notepad for `tenants_develop.json` script will run build and install windows service.
+After closing notepad for `configuration_develop.json` script will run build and install windows service.
 
 Same as for `db-insight-migrations` if something goes wrong you can repeat step or continue. Default is continue.
 

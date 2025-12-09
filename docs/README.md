@@ -64,7 +64,7 @@ Complete configuration reference:
   - App API configuration (database, Qlik Service, authentication)
   - Qlik Service configuration (certificates, Qlik Enterprise connection)
   - Frontend configuration (API endpoints, feature flags)
-- Tenant configuration structure (tenants_develop.json, tenants_staging.json)
+- Tenant configuration structure (configuration_develop.json, configuration_staging.json)
   - Multi-tenant setup with customers and apps
   - Qlik app mapping and virtual proxy configuration
 - Frontend startup configuration (startup.json)

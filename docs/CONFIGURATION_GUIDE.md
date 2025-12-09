@@ -25,8 +25,8 @@ Configuration Architecture:
 ├── sih-atellica-qplus-backend/
 │   ├── .env                        # Service environment variables
 │   └── src/
-│       ├── tenants_develop.json    # Development tenant config
-│       └── tenants_staging.json    # Staging tenant config
+│       ├── configuration_develop.json    # Development tenant config
+│       └── configuration_staging.json    # Staging tenant config
 ├── sih-atellica-qlik-service/
 │   └── .env                        # Service environment variables
 └── sih-atellica-qplus-frontend/
@@ -74,7 +74,7 @@ API_KEY=your-secure-api-key-here    # IMPORTANT: Generate unique key!
 **Tenant Configuration**:
 ```bash
 # TENANT_FILE_PATH=src/
-# TENANT_FILE_NAME=tenants_develop.json    # Or tenants_staging.json
+# TENANT_FILE_NAME=configuration_develop.json    # Or configuration_staging.json
 # TENANT_FILE_ONLY=false                   # false = also load from DB
 ```
 
@@ -231,8 +231,8 @@ Tenant configuration defines the multi-tenant structure, mapping tenants → cus
 
 ```
 sih-atellica-qplus-backend/src/
-├── tenants_develop.json    # Development environment
-└── tenants_staging.json    # Staging environment
+├── configuration_develop.json    # Development environment
+└── configuration_staging.json    # Staging environment
 ```
 
 ### Tenant Structure
@@ -365,7 +365,7 @@ sih-atellica-qplus-backend/src/
    - QRS port (usually 4242)
    - Virtual proxy prefix (if used)
 
-2. **Create tenant entry** in `tenants_develop.json`:
+2. **Create tenant entry** in `configuration_develop.json`:
    ```json
    {
      "id": "new-tenant-id",
@@ -531,7 +531,7 @@ QLIK_APP_SESSION_HEADER=X-Qlik-Session
 
 # Tenant Configuration
 TENANT_FILE_PATH=src/
-TENANT_FILE_NAME=tenants_develop.json
+TENANT_FILE_NAME=configuration_develop.json
 TENANT_FILE_ONLY=false
 
 # JWT (Qlik Cloud)
@@ -649,13 +649,13 @@ SVC_PWD=
 ### Tenant Management
 
 1. **Use separate files per environment**:
-   - `tenants_develop.json` - Local development
-   - `tenants_staging.json` - Staging environment
-   - `tenants_production.json` - Production
+   - `configuration_develop.json` - Local development
+   - `configuration_staging.json` - Staging environment
+   - `configuration_production.json` - Production
 
 2. **Validate JSON before deployment**:
    ```bash
-   node -e "JSON.parse(require('fs').readFileSync('tenants_develop.json'))"
+   node -e "JSON.parse(require('fs').readFileSync('configuration_develop.json'))"
    ```
 
 3. **Document tenant changes** in commit messages
@@ -698,7 +698,7 @@ docker-compose up
 
 ### Scenario 2: Connecting to Different Qlik Environment
 
-**Edit App API tenant config** (`sih-atellica-qplus-backend/src/tenants_develop.json`):
+**Edit App API tenant config** (`sih-atellica-qplus-backend/src/configuration_develop.json`):
 ```json
 {
   "host": "new-qlik-server.domain.com",
@@ -755,7 +755,7 @@ docker-compose restart
 
 ### Scenario 4: Multi-Tenant Production Setup
 
-**Create production tenant file** (`tenants_production.json`):
+**Create production tenant file** (`configuration_production.json`):
 ```json
 [
   {
@@ -775,7 +775,7 @@ docker-compose restart
 
 **Configure App API .env**:
 ```bash
-TENANT_FILE_NAME=tenants_production.json
+TENANT_FILE_NAME=configuration_production.json
 NODE_ENV=production
 ```
 

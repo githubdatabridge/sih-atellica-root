@@ -46,7 +46,7 @@ function RunAppDeploy
         Start-Process WordPad ".env" -Wait
 
         if($app -eq $app_api){
-            Start-Process WordPad "./src/tenants_develop.json" -Wait
+            Start-Process WordPad "./src/configuration.json" -Wait
 
             # CHECK FOR CERS DIR
             'Copying server certificates ...'
