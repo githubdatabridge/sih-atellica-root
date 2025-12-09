@@ -435,7 +435,89 @@ cat > public/config.json <<EOF
 EOF
 ```
 
-### 5.6 Start the Frontend
+### 5.6 Setup Qlik Authentication Cookie (Critical for Local Development)
+
+**IMPORTANT:** Before starting the frontend, you need to set up Qlik authentication cookies to work with localhost. In production, this isn't needed because the frontend and Qlik server share the same root domain. For local development, follow these steps:
+
+#### Step 1: Enable Third-Party Cookies in Browser
+
+**Chrome/Edge:**
+1. Go to `chrome://settings/cookies` (or `edge://settings/cookies`)
+2. Select **"Allow all cookies"** or **"Block third-party cookies in Incognito"**
+3. Make sure third-party cookies are **NOT blocked**
+
+**Firefox:**
+1. Go to `about:preferences#privacy`
+2. Under "Enhanced Tracking Protection", select **"Standard"** or **"Custom"**
+3. Ensure "Cookies" is not set to block all third-party cookies
+
+#### Step 2: Login to Qlik Sense and Obtain Cookie
+
+1. **Open your browser** and navigate to:
+   ```
+   https://qs-internal.databridge.ch/localhost/hub
+   ```
+
+2. **Login with your Qlik credentials**
+   - You should see the Qlik Sense Hub
+
+3. **Cookie will be set** by Qlik Sense server
+   - The cookie domain will be `.qs-internal.databridge.ch`
+
+#### Step 3: Modify Cookie Domain to localhost
+
+1. **Open Browser Developer Tools:**
+   - Press **F12** or **Right-click → Inspect**
+
+2. **Navigate to Application/Storage tab:**
+   - **Chrome/Edge**: Click on **"Application"** tab → **"Cookies"** → `https://qs-internal.databridge.ch`
+   - **Firefox**: Click on **"Storage"** tab → **"Cookies"** → `https://qs-internal.databridge.ch`
+
+3. **Find the Qlik authentication cookie:**
+   - Look for cookies with names like:
+     - `X-Qlik-Session-*`
+     - `QlikTicket`
+     - Or other Qlik-related session cookies
+
+4. **Modify the cookie domain:**
+   - **Chrome/Edge:**
+     - Double-click on the **Domain** field of the cookie
+     - Change from `.qs-internal.databridge.ch` to `localhost`
+     - Press **Enter** to save
+
+   - **Firefox:**
+     - Right-click on the cookie → **"Edit"**
+     - Change the **Domain** field to `localhost`
+     - Click **"Save"**
+
+5. **Verify the change:**
+   - The cookie should now appear under `localhost` domain
+   - The value and expiration should remain the same
+
+#### Step 4: Important Notes
+
+**Why is this needed?**
+- Qlik cookies are set for the Qlik server domain (qs-internal.databridge.ch)
+- Your localhost frontend needs to send these cookies to the backend
+- Browsers won't send cookies cross-domain unless manually adjusted
+- In production, this problem doesn't exist (same domain)
+
+**Cookie Expiration:**
+- If the cookie expires, repeat these steps
+- Qlik session cookies typically last several hours
+- You'll know it expired when the frontend shows authentication errors
+
+**Security Note:**
+- This is **only for local development**
+- Never modify production cookies
+- The modified cookie only works on your local machine
+
+**Troubleshooting:**
+- If cookies aren't visible, try refreshing the Qlik hub page
+- Some browsers require you to delete the old cookie first before adding with new domain
+- Make sure you're logged into Qlik before modifying cookies
+
+### 5.7 Start the Frontend
 
 ```bash
 # Using npm
@@ -449,7 +531,7 @@ The frontend will be available at:
 - **HTTPS**: https://localhost:7001
 - **HTTP**: http://localhost:7001
 
-### 5.7 Verify Frontend
+### 5.8 Verify Frontend
 
 Open your browser and navigate to:
 - https://localhost:7001 (or http://localhost:7001)
@@ -696,6 +778,59 @@ npm install
 npm run build
 ```
 
+### Issue 8: Qlik Authentication Errors / Frontend Shows "Unauthorized"
+
+**Error:** Frontend shows authentication errors, "Unauthorized", or fails to load Qlik content
+
+**Common Symptoms:**
+- Frontend loads but Qlik visualizations don't appear
+- Console shows 401 Unauthorized errors
+- "Session expired" messages
+- Qlik API calls failing
+
+**Root Cause:** Qlik authentication cookie is not set up correctly for localhost
+
+**Solution:**
+
+1. **Verify third-party cookies are enabled:**
+   - Chrome/Edge: `chrome://settings/cookies` → Allow all cookies
+   - Firefox: `about:preferences#privacy` → Standard protection
+
+2. **Re-setup Qlik authentication cookie:**
+   - Go to: https://qs-internal.databridge.ch/localhost/hub
+   - Login with your credentials
+   - Open Developer Tools (F12)
+   - Go to **Application → Cookies** (Chrome/Edge) or **Storage → Cookies** (Firefox)
+   - Find Qlik session cookies (X-Qlik-Session-*, QlikTicket)
+   - **Change the domain from `.qs-internal.databridge.ch` to `localhost`**
+
+3. **Verify cookie was set correctly:**
+   ```bash
+   # In browser console, check cookies
+   document.cookie
+   ```
+   - You should see Qlik-related cookies for localhost domain
+
+4. **Check cookie expiration:**
+   - Qlik cookies expire after several hours
+   - If expired, repeat the cookie setup process (Step 2)
+
+5. **Clear browser cache if needed:**
+   ```bash
+   # Or use browser: Ctrl+Shift+Delete
+   ```
+
+6. **Restart frontend:**
+   ```bash
+   cd ~/sih-atellica-root/sih-atellica-qplus-frontend
+   # Stop with Ctrl+C
+   yarn start
+   ```
+
+**Important:** This is a known limitation of local development with cross-domain cookies. In production environments, this issue doesn't occur because the frontend and Qlik server share the same root domain.
+
+**See also:** Step 5.6 in the frontend setup section for detailed cookie setup instructions.
+
 ---
 
 ## Daily Development Workflow
@@ -714,7 +849,17 @@ npm run dev
 # 3. Start Backend API (Terminal 2)
 cd ~/sih-atellica-root/sih-atellica-qplus-backend
 npm run watch
+```
 
+**IMPORTANT: Before starting the frontend**, set up the Qlik authentication cookie if not done already or if expired:
+1. Go to: https://qs-internal.databridge.ch/localhost/hub and login
+2. Open Developer Tools (F12) → Application/Storage → Cookies
+3. Change Qlik cookie domain from `.qs-internal.databridge.ch` to `localhost`
+4. Verify third-party cookies are enabled in browser
+
+(See Step 5.6 for detailed instructions)
+
+```bash
 # 4. Start Frontend (Terminal 3)
 cd ~/sih-atellica-root/sih-atellica-qplus-frontend
 yarn start
