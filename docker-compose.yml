@@ -5,8 +5,13 @@ services:
       dockerfile: "./sih-atellica-qlik-service/Dockerfile.dev"
     environment:
       - DB_HOST=db
+      - HOST=0.0.0.0
+      - SSL=true
+      - PORT=8080
+      - GATEWAY_HOST=https://sih-atellica-qplus-backend:3001
+      - GATEWAY_PATH=/
     ports:
-      - "3003:8080"
+      - "3001:8080"
     depends_on:
       - db
     volumes:
@@ -14,10 +19,17 @@ services:
       - sih-atellica-qlik-service-node_modules:/usr/src/app/node_modules
   sih-atellica-qplus-backend:
     build:
-      context: "./sih-atellica-qplus-backend/"
-      dockerfile: "Dockerfile.dev"
+      context: "."
+      dockerfile: "./sih-atellica-qplus-backend/Dockerfile.dev"
     environment:
       - DB_HOST=db
+      - HOST=0.0.0.0
+      - SSL=true
+      - PORT=8080
+      - QLIK_SERVICE_HOST=https://sih-atellica-qlik-service
+      - QLIK_SERVICE_PORT=8080
+      - GATEWAY_HOST=https://sih-atellica-qplus-backend:3002
+      - GATEWAY_PATH=/
     ports:
       - "3002:8080"
     depends_on:

@@ -3,3 +3,4 @@ data/
 .npmrc
 .env
 .DS_Store
+certificates/
