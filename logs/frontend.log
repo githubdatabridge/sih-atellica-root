@@ -1,0 +1,9 @@
+npm warn Unknown project config "always-auth". This will stop working in the next major version of npm.
+
+> sh-poc-insight-frontend@1.0.0 start
+> vite
+
+
+  VITE v5.3.5  ready in 413 ms
+
+  ➜  Network: https://local.databridge.ch:7005/

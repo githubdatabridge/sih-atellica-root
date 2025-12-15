@@ -1,0 +1,6 @@
+
+> sih-atellica-qlik-service@1.0.0 dev
+> tsc-watch --onSuccess "node build/index.js"
+
+c9:44:38 PM - Starting compilation in watch mode...
+

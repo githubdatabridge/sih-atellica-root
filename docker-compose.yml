@@ -1,4 +1,22 @@
 services:
+  sih-atellica-qplus-frontend:
+    build:
+      context: "."
+      dockerfile: "./sih-atellica-qplus-frontend/Dockerfile.dev"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=7005
+    ports:
+      - "7005:7005"
+    depends_on:
+      - sih-atellica-qplus-backend
+    volumes:
+      - ./sih-atellica-qplus-frontend:/usr/src/app
+      - sih-atellica-qplus-frontend-node_modules:/usr/src/app/node_modules
+      - ./certificates:/usr/src/certificates
+    profiles:
+      - frontend
+      - full
   sih-atellica-qlik-service:
     build:
       context: "."
@@ -49,5 +67,6 @@ services:
       POSTGRES_PASSWORD: root
       POSTGRES_DB: sih_qplus
 volumes:
+  sih-atellica-qplus-frontend-node_modules:
   sih-atellica-qlik-service-node_modules:
   sih-atellica-qplus-backend-node_modules:

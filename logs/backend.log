@@ -1,0 +1,451 @@
+
+> sih-atellica-qplus-backend@1.0.0 dev
+> tsc-watch --onSuccess "node build/index.js"
+
+c9:11:05 PM - Starting compilation in watch mode...
+
+
+9:11:15 PM -[32m Found 0 errors. Watching for file changes.[39m
+2025-12-15T20:11:17.314Z  [32minfo[39m  [SihQplusApi]        Tenants data loaded from db with 1 tenants.    
+2025-12-15T20:11:17.354Z  [33mwarn[39m  [SihQplusApi]        Missing JWT Token certs in ./build/certificates/data    
+2025-12-15T20:11:17.355Z  [33mwarn[39m  [SihQplusApi]        Missing JWT Token certs in ./build/certificates/data    
+2025-12-15T20:11:17.502Z  [32minfo[39m  [SihQplusApi]        Starting Socket Server    
+2025-12-15T20:11:17.507Z  [32minfo[39m  [SihQplusApi]        Socket Server Started    
+2025-12-15T20:11:17.570Z  [32minfo[39m  [SihQplusApi]        Server running on https://local.databridge.ch:3002    
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328","sessionId":"d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+2025-12-15T20:11:21.824Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /auth/me  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+2025-12-15T20:11:21.835Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /users  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:23.091Z  [32minfo[39m  [SihQplusApi]        SOCKET SERVER: Client Connected [1] dd169a49-166b-4c66-a98f-c12587b649bd sih    
+2025-12-15T20:11:23.094Z  [32minfo[39m  [SihQplusApi]        SOCKET SERVER: Customer [sih] Tenant [sih] App [qplus] 
+ Connected Users: 
+ dd169a49-166b-4c66-a98f-c12587b649bd    
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:24.201Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /auth/me  local.databridge.ch    
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:24.237Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /users  local.databridge.ch    
+2025-12-15T20:11:24.250Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:24.705Z  [32minfo[39m  [SihQplusApi]        SOCKET SERVER: Client Connected [2] dd169a49-166b-4c66-a98f-c12587b649bd sih    
+2025-12-15T20:11:24.707Z  [32minfo[39m  [SihQplusApi]        SOCKET SERVER: Customer [sih] Tenant [sih] App [qplus] 
+ Connected Users: 
+ dd169a49-166b-4c66-a98f-c12587b649bd
+ dd169a49-166b-4c66-a98f-c12587b649bd    
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:24.804Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:29.301Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /bookmarks  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+2025-12-15T20:11:29.602Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /auth/me  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+2025-12-15T20:11:29.613Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /actions/comments  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+2025-12-15T20:11:29.620Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /actions/reports  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:29.950Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /bookmarks  local.databridge.ch    
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:30.151Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /auth/me  local.databridge.ch    
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:30.216Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /actions/comments  local.databridge.ch    
+2025-12-15T20:11:30.219Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /datasets  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:30.272Z  [32minfo[39m  [SihQplusApi]        SOCKET SERVER: Client Connected [3] dd169a49-166b-4c66-a98f-c12587b649bd sih    
+2025-12-15T20:11:30.272Z  [32minfo[39m  [SihQplusApi]        SOCKET SERVER: Customer [sih] Tenant [sih] App [qplus] 
+ Connected Users: 
+ dd169a49-166b-4c66-a98f-c12587b649bd
+ dd169a49-166b-4c66-a98f-c12587b649bd
+ dd169a49-166b-4c66-a98f-c12587b649bd    
+2025-12-15T20:11:30.279Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /actions/reports  local.databridge.ch    
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:30.710Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /datasets  local.databridge.ch    
+2025-12-15T20:11:30.715Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /datasets  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+2025-12-15T20:11:31.068Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /qlik/is-active  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+2025-12-15T20:11:31.103Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /qlik/is-active  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328","sessionId":"d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:34.124Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /datasets  local.databridge.ch    
+2025-12-15T20:11:34.551Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /qlik/is-active  local.databridge.ch    
+2025-12-15T20:11:34.557Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /qlik/is-active  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+2025-12-15T20:11:34.568Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /qlik/is-active  local.databridge.ch    
+2025-12-15T20:11:34.571Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /qlik/is-active  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328","sessionId":"d8a6d2ed-dddb-483d-ad56-8c1ac3ab7328","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:35.536Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /qlik/is-active  local.databridge.ch    
+2025-12-15T20:11:35.588Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /qlik/is-active  local.databridge.ch    
+2025-12-15T20:11:36.418Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+2025-12-15T20:11:36.807Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /qlik/is-active  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:36.961Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:37.113Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:37.587Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:37.792Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /qlik/is-active  local.databridge.ch    
+2025-12-15T20:11:38.469Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:38.981Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:39.042Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+2025-12-15T20:11:39.188Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /datasets  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:39.555Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:39.649Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /datasets  local.databridge.ch    
+2025-12-15T20:11:42.106Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:42.623Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:42.748Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:43.218Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:43.397Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:43.920Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:43.971Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:44.500Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:45.198Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /datasets  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:45.693Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /datasets  local.databridge.ch    
+2025-12-15T20:11:45.913Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:46.409Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:46.472Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:46.949Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:47.123Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:47.605Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:47.607Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+2025-12-15T20:11:47.672Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:48.095Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: PUT  /app-user-preferences  local.databridge.ch    
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:48.323Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:48.349Z  [34mdebug[39m  [SihQplusApi]       Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+[QlikCookie] Auth request headers: {"x-tenant-id":"sih","x-customer-id":"sih","x-vp":"localhost"}
+[QlikCookie] Auth request cookies: {"X-Qlik-Session-localhost":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb"}
+[QesAuthProvider.ensureQlikUser] Input: {"qlikSessionHeader":"X-Qlik-Session","vp":"localhost","cookieName":"X-Qlik-Session-localhost","qlikSessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","qlikAppName":"qplus","tenantHost":"qs-internal.databridge.ch","tenantPort":4242,"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true}}
+[QesAuthProvider] Step 1: Getting Qlik apps by filter...
+[QesAuthProvider] Step 1 complete. Found apps: ["4e2d4117-f850-496b-8eb4-df1ff570c961"]
+[QesAuthProvider] Step 2: Getting user by session ID: 1cfe0421-78e7-40cf-8469-fa4d8832f4eb
+[QlikService.getUserBySessionId] Request: {"url":"https://local.databridge.ch:3001/user/1cfe0421-78e7-40cf-8469-fa4d8832f4eb","sessionId":"1cfe0421-78e7-40cf-8469-fa4d8832f4eb","data":{"qsInfo":{"host":"qs-internal.databridge.ch","qrsPort":4242,"qpsPort":4243,"vp":"localhost","ssl":true},"customProperties":[{"key":"roles","name":"qplus_role"},{"key":"scopes","name":"qplus_scopes"},{"key":"email","name":"qplus_email"}]}}
+[QlikService.getUserBySessionId] Response: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 2 complete. User: {"id":"dd169a49-166b-4c66-a98f-c12587b649bd","name":"patric.amatulli","userDirectory":"VM-I-QS-DEV","userId":"patric.amatulli","customProperties":[{"key":"roles","name":"qplus_role","values":["admin","user"]},{"key":"scopes","name":"qplus_scopes","values":["user:default","datasets:write","datasets:read"]}]}
+[QesAuthProvider] Step 3: Getting user list for app: 4e2d4117-f850-496b-8eb4-df1ff570c961
+[QesAuthProvider] Step 3 complete. User count: 44
+2025-12-15T20:11:48.826Z  [34mdebug[39m  [SihQplusApi]       Response Request 127.0.0.1: GET  /app-user-preferences  local.databridge.ch    
+2025-12-15T20:11:51.515Z  [32minfo[39m  [SihQplusApi]        stopping server...    
+2025-12-15T20:11:51.529Z  [32minfo[39m  [SihQplusApi]        SOCKET SERVER: Client Disconnected dd169a49-166b-4c66-a98f-c12587b649bd sih    
+2025-12-15T20:11:51.536Z  [32minfo[39m  [SihQplusApi]        SOCKET SERVER: Client Disconnected dd169a49-166b-4c66-a98f-c12587b649bd sih    
+2025-12-15T20:11:51.537Z  [32minfo[39m  [SihQplusApi]        SOCKET SERVER: Client Disconnected dd169a49-166b-4c66-a98f-c12587b649bd sih    
+2025-12-15T20:11:51.537Z  [32minfo[39m  [SihQplusApi]        stopped server.    
