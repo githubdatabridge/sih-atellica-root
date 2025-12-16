@@ -22,11 +22,45 @@ cd ~/sih-atellica-root
 git submodule update --init --remote
 ```
 
-> **Note:** SSL certificates are included in the `certificates/` folder. Default configuration values for local development are built into the services - no `.env` files needed!
+---
+
+## Step 2: Setup Certificates
+
+> **IMPORTANT**: The `certificates/` folder is **not included** in the repository and must be created manually.
+
+Create the following structure in the project root:
+
+```
+sih-atellica-root/
+ └── certificates/
+     ├── qlik/           # Qlik Sense certificates
+     │   ├── client.pem
+     │   ├── client_key.pem
+     │   ├── root.pem
+     │   └── ...
+     └── server/         # Server SSL certificates
+         ├── server.crt
+         ├── server.key
+         └── server.pfx
+```
+
+**To obtain certificates:**
+- **Qlik certificates**: Contact your team lead
+- **Server certificates**: Either request from team lead OR generate using `mkcert`:
+  ```bash
+  # Install mkcert (macOS)
+  brew install mkcert && mkcert -install
+
+  # Generate certificates
+  cd certificates/server
+  mkcert -key-file server.key -cert-file server.crt local.databridge.ch localhost 127.0.0.1
+  ```
+
+> See [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md#5-ssl-certificate-setup-for-local-development) for detailed certificate setup.
 
 ---
 
-## Step 2: Add Host Entry
+## Step 3: Add Host Entry
 
 The application requires a custom hostname. Add it to your hosts file.
 
@@ -81,7 +115,7 @@ Should return `127.0.0.1`
 
 ---
 
-## Step 3: Start Services
+## Step 4: Start Services
 
 ### Option A: Interactive Start (Recommended)
 
@@ -106,8 +140,9 @@ Or use direct commands:
 
 To stop:
 ```bash
-./stop.sh           # Interactive menu
+./stop.sh           # Interactive mode (default) - select individual services
 ./stop.sh all       # Stop everything
+./stop.sh menu      # Show full menu with all options
 ```
 
 ### Option B: Manual Start (Multiple Terminals)
@@ -141,7 +176,7 @@ yarn start
 
 ---
 
-## Step 4: Access Services
+## Step 5: Access Services
 
 | Service | URL |
 |---------|-----|
@@ -151,7 +186,7 @@ yarn start
 
 ---
 
-## Step 5: Qlik Authentication (IMPORTANT!)
+## Step 6: Qlik Authentication (IMPORTANT!)
 
 **You MUST log in to Qlik BEFORE using the frontend application.**
 
@@ -223,9 +258,11 @@ The included certificates should work automatically. If you see certificate warn
 ./start.sh              # Interactive menu
 ./start.sh local        # Direct: local mode
 
-# Stop services
-./stop.sh               # Interactive menu
+# Stop services (interactive mode is default)
+./stop.sh               # Interactive: select individual services to stop
 ./stop.sh all           # Direct: stop everything
+./stop.sh local         # Direct: stop local mode services
+./stop.sh menu          # Show full menu with all options
 
 # View logs (while services are running)
 tail -f logs/backend.log
@@ -237,6 +274,31 @@ open "https://qs-internal.databridge.ch/localhost/hub/my/work"  # macOS
 xdg-open "https://qs-internal.databridge.ch/localhost/hub/my/work"  # Linux
 start "https://qs-internal.databridge.ch/localhost/hub/my/work"  # Windows
 ```
+
+### Stop Script - Interactive Mode
+
+Running `./stop.sh` shows running services with status indicators:
+
+```
+Running services:
+
+  Local Services:
+    ● 1) Frontend (port 7005)
+    ○ 2) Backend (port 3002)
+    ● 3) Qlik Service (port 3001)
+
+  Docker Containers:
+    ● 4) Database
+    ○ 5) Backend (Docker)
+
+  ● = Running  ○ = Not running
+
+Enter service numbers to stop (e.g., '1 2 4'):
+```
+
+- Enter numbers: `1 2 4` or `1,2,4`
+- Enter `a` to stop all running services
+- Enter `q` to quit
 
 ---
 

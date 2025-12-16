@@ -382,19 +382,79 @@ docker-compose logs -f sih-atellica-qlik-service
 
 ### Stop All Services
 
-Use the interactive stop script:
+Use the stop script:
 
 ```bash
 ./stop.sh
 ```
 
+By default, this opens **interactive mode** where you can select individual services to stop.
+
 Or use direct commands:
 
 ```bash
-./stop.sh local    # Stop local mode services
-./stop.sh docker   # Stop Docker backend services
-./stop.sh full     # Stop full Docker services
-./stop.sh all      # Stop everything (both local and Docker)
+./stop.sh           # Interactive mode (default)
+./stop.sh local     # Stop local mode services
+./stop.sh docker    # Stop Docker backend services
+./stop.sh full      # Stop full Docker services
+./stop.sh all       # Stop everything (both local and Docker)
+./stop.sh menu      # Show the full menu
+./stop.sh -m        # Short form for menu mode
+```
+
+#### Interactive Mode (Default)
+
+Running `./stop.sh` without arguments shows all running services with their status and allows you to select which ones to stop:
+
+```
+============================================
+  Interactive Service Stop
+============================================
+
+Running services:
+
+  Local Services:
+    ● 1) Frontend (port 7005)
+    ○ 2) Backend (port 3002)
+    ● 3) Qlik Service (port 3001)
+
+  Docker Containers:
+    ● 4) Database
+    ○ 5) Backend (Docker)
+    ○ 6) Qlik Service (Docker)
+    ○ 7) Frontend (Docker)
+
+  ● = Running  ○ = Not running
+
+  a) Stop all running services
+  q) Back to main menu
+
+Enter service numbers to stop (e.g., '1 2 4' or '1,2,4'):
+>
+```
+
+You can:
+- Enter individual numbers: `1 2 4` or `1,2,4`
+- Enter `a` to stop all running services
+- Enter `q` to quit
+
+#### Menu Mode
+
+If you prefer the traditional menu, use `./stop.sh menu` or `./stop.sh -m`:
+
+```
+============================================
+     SIH Atellica - Stop Services
+============================================
+
+Which services would you like to stop?
+
+  1) Local Mode services
+  2) Docker Mode services (backend only)
+  3) Full Docker Mode services
+  4) All services
+  5) Interactive mode
+  6) Exit
 ```
 
 #### Manual Docker Stop (Alternative)

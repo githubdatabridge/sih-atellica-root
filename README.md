@@ -101,7 +101,7 @@ Before you begin, ensure you have the following installed:
 
 ## Quick Start
 
-Get the project running in 6 steps:
+Get the project running:
 
 ### 1. Clone the Repository
 
@@ -144,23 +144,43 @@ cp sih-atellica-qplus-frontend/.env.example sih-atellica-qplus-frontend/.env
 >Edit each service's `.env` file with your specific configuration (see [Environment Configuration](#environment-configuration) section).
 
 ### 5. Provide Qlik and Server Certificates
-Place the required Qlik and server certificates in a `certificates/` directory at the root of the project:
+
+> **IMPORTANT**: The `certificates/` folder must be created manually at the root of the project. This folder is **not included in the repository** and must be obtained separately.
+
+Create the `certificates/` directory structure at the root of the project:
 
 ```
 sih-atellica-root/
- ├── certificates/
-    ├── qlik/
-    │    ├── client.pfx
-    │    ├── root.pem
-    │    └── ...
-    └── server/
-          ├── server.crt
-          ├── server.key
-          └── ...
+ ├── certificates/           <-- Create this folder manually
+ │   ├── qlik/               <-- Qlik Sense certificates
+ │   │   ├── client.pem      # Client certificate
+ │   │   ├── client_key.pem  # Client private key
+ │   │   ├── client.pfx      # Client certificate (PKCS#12 format)
+ │   │   ├── root.pem        # Root CA certificate
+ │   │   ├── root.cer        # Root CA certificate (DER format)
+ │   │   ├── server.pem      # Server certificate
+ │   │   ├── server_key.pem  # Server private key
+ │   │   └── server.pfx      # Server certificate (PKCS#12 format)
+ │   │
+ │   └── server/             <-- Server SSL certificates (HTTPS)
+ │       ├── server.crt      # Server certificate
+ │       ├── server.key      # Server private key
+ │       └── server.pfx      # Server certificate (PKCS#12 format)
+ │
+ ├── sih-atellica-qplus-backend/
+ ├── sih-atellica-qlik-service/
+ └── sih-atellica-qplus-frontend/
 ```
-> **Note**: Contact your team lead for the required Qlik and server certificates.
+
+**To obtain certificates:**
+1. Contact your team lead for the Qlik certificates (`certificates/qlik/`)
+2. For server certificates (`certificates/server/`), you can either:
+   - Request them from your team lead, OR
+   - Generate self-signed certificates using `mkcert` (see [SSL Certificate Setup](./docs/DEVELOPMENT_GUIDE.md#5-ssl-certificate-setup-for-local-development))
 
 > **Note**: Ensure the paths in the `.env` files point to these certificate locations.
+
+> **Note**: The `certificates/` folder is listed in `.gitignore` to prevent accidental commits of sensitive files.
 
 Wait for all services to start (this may take a few minutes on first run).
 
@@ -234,6 +254,51 @@ cd sih-atellica-qplus-frontend
 yarn install
 yarn start
 ```
+
+### 9. Stopping Services
+
+Use the stop script to stop running services:
+
+```bash
+./stop.sh
+```
+
+By default, this opens **interactive mode** where you can see which services are running and select which ones to stop:
+
+```
+============================================
+  Interactive Service Stop
+============================================
+
+Running services:
+
+  Local Services:
+    ● 1) Frontend (port 7005)
+    ○ 2) Backend (port 3002)
+    ● 3) Qlik Service (port 3001)
+
+  Docker Containers:
+    ● 4) Database
+    ○ 5) Backend (Docker)
+    ○ 6) Qlik Service (Docker)
+    ○ 7) Frontend (Docker)
+
+  ● = Running  ○ = Not running
+
+Enter service numbers to stop (e.g., '1 2 4' or '1,2,4'):
+```
+
+**Quick commands:**
+
+| Command | Description |
+|---------|-------------|
+| `./stop.sh` | Interactive mode - select individual services |
+| `./stop.sh local` | Stop all local mode services |
+| `./stop.sh docker` | Stop Docker backend services |
+| `./stop.sh all` | Stop everything |
+| `./stop.sh menu` | Show the full menu with all options |
+
+> For detailed stop options, see [docs/DEVELOPMENT_GUIDE.md](./docs/DEVELOPMENT_GUIDE.md#stop-all-services).
 
 ## Documentation
 
